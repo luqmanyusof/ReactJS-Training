@@ -1,10 +1,5 @@
 # React Course - Unified Project
 
-## One Project, All 30 Topics, One node_modules!
-
-This unified structure keeps all topics in a single project with shared dependencies.
-**Total size: ~200MB** instead of 6-9GB!
-
 ## Quick Start
 
 ```bash
