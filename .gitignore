@@ -1,9 +1,12 @@
 # Dependencies
 node_modules/
+**/node_modules/
 
 # Build output
 dist/
 build/
+**/dist/
+**/build/
 
 # Environment variables
 .env
@@ -40,3 +43,17 @@ coverage/
 # Misc
 *.log
 .cache
+
+# Lock files (large auto-generated files)
+package-lock.json
+**/package-lock.json
+yarn.lock
+**/yarn.lock
+pnpm-lock.yaml
+**/pnpm-lock.yaml
+
+# Sub-project specific ignores
+basic_layout/.gitignore
+manage_user/.gitignore
+basic_layout/eslint.config.js
+manage_user/eslint.config.js

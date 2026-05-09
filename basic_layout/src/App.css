@@ -1,0 +1,16 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px); /* Takes full height of the screen but minus the footer height and navbar height */
+}
+
+.main-layout {
+  display: flex;
+  flex: 1; /* This pushes the footer down by taking up all available space */
+}
+
+.content-area {
+  flex: 1; /* This makes the page content take up the remaining width next to sidebar */
+  padding: 20px;
+}

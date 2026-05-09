@@ -1,0 +1,436 @@
+{
+  "project": {
+    "name": "Member Management Backend API",
+    "description": "A serverless RESTful API for managing members (ahli) with authentication support, built with Node.js and deployed on Vercel with Neon PostgreSQL database.",
+    "version": "1.0.0",
+    "type": "Backend API",
+    "deployment": {
+      "platform": "Vercel",
+      "production_url": "https://training-backend-sigma.vercel.app",
+      "deployment_type": "Serverless Functions"
+    }
+  },
+  "tech_stack": {
+    "runtime": "Node.js 18+",
+    "platform": "Vercel Serverless Functions",
+    "database": {
+      "type": "Neon PostgreSQL",
+      "description": "Serverless PostgreSQL database",
+      "driver": "@neondatabase/serverless"
+    },
+    "dependencies": [
+      "@neondatabase/serverless@^0.10.1",
+      "uuid@^11.1.0"
+    ]
+  },
+  "architecture": {
+    "pattern": "Serverless Functions",
+    "structure": {
+      "api/": "Serverless function endpoints",
+      "public/": "Static files (landing page, documentation)",
+      "setup-database.sql": "Database schema initialization",
+      "vercel.json": "Vercel deployment configuration"
+    }
+  },
+  "api_endpoints": [
+    {
+      "path": "/api/auth",
+      "method": "POST",
+      "description": "Authenticate user and get access token",
+      "authentication": false,
+      "request_body": {
+        "username": "string (required)",
+        "password": "string (required)"
+      },
+      "responses": {
+        "200": {
+          "description": "Authentication successful",
+          "example": {
+            "auth": "success",
+            "token": "dummy-jwt-token"
+          }
+        },
+        "401": {
+          "description": "Authentication failed",
+          "example": {
+            "auth": "failed",
+            "token": null
+          }
+        }
+      },
+      "default_credentials": {
+        "username": "admin",
+        "password": "admin123",
+        "note": "Change these for production use"
+      }
+    },
+    {
+      "path": "/api/ahli",
+      "method": "GET",
+      "description": "Retrieve all members",
+      "authentication": false,
+      "query_parameters": null,
+      "responses": {
+        "200": {
+          "description": "List of all members",
+          "example": [
+            {
+              "id": "550e8400-e29b-41d4-a716-446655440000",
+              "nama": "Ahmad bin Ali",
+              "telefon": "0123456789",
+              "email": "ahmad@example.com",
+              "jawatan": "Ahli Biasa",
+              "nombor_ic": "901234567890",
+              "no_keahlian": "M001",
+              "created_at": "2024-01-15T08:30:00.000Z",
+              "updated_at": "2024-01-15T08:30:00.000Z"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/ahli",
+      "method": "POST",
+      "description": "Add a new member",
+      "authentication": false,
+      "request_body": {
+        "nama": "string (required)",
+        "telefon": "string (optional)",
+        "email": "string (optional)",
+        "jawatan": "string (optional)",
+        "nombor_ic": "string (optional)",
+        "no_keahlian": "string (optional)"
+      },
+      "responses": {
+        "201": {
+          "description": "Member created successfully",
+          "example": {
+            "id": "550e8400-e29b-41d4-a716-446655440000",
+            "message": "Ahli berjaya ditambah",
+            "nama": "Ahmad bin Ali",
+            "telefon": "0123456789",
+            "email": "ahmad@example.com",
+            "jawatan": "Ahli Biasa",
+            "nombor_ic": "901234567890",
+            "no_keahlian": "M001"
+          }
+        },
+        "400": {
+          "description": "Invalid data"
+        }
+      }
+    },
+    {
+      "path": "/api/ahli/:id",
+      "method": "PUT",
+      "description": "Update an existing member",
+      "authentication": true,
+      "authentication_method": "Query parameters (username and password)",
+      "query_parameters": {
+        "username": "admin (required for auth)",
+        "password": "admin123 (required for auth)"
+      },
+      "url_parameters": {
+        "id": "Member UUID (required)"
+      },
+      "request_body": {
+        "nama": "string (optional)",
+        "telefon": "string (optional)",
+        "email": "string (optional)",
+        "jawatan": "string (optional)",
+        "nombor_ic": "string (optional)",
+        "no_keahlian": "string (optional)"
+      },
+      "responses": {
+        "200": {
+          "description": "Member updated successfully",
+          "example": {
+            "id": "550e8400-e29b-41d4-a716-446655440000",
+            "message": "Ahli berjaya dikemaskini",
+            "nama": "Ahmad bin Ali Updated",
+            "telefon": "0129876543",
+            "email": "ahmad.updated@example.com",
+            "jawatan": "Pengerusi",
+            "nombor_ic": "901234567890",
+            "no_keahlian": "M001"
+          }
+        },
+        "401": {
+          "description": "Authentication failed",
+          "example": {
+            "error": "Authentication failed"
+          }
+        },
+        "404": {
+          "description": "Member not found",
+          "example": {
+            "error": "Ahli tidak dijumpai"
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/ahli-html",
+      "method": "GET",
+      "description": "View all members in an HTML table format",
+      "authentication": false,
+      "responses": {
+        "200": {
+          "description": "HTML page with formatted table of all members",
+          "content_type": "text/html"
+        }
+      }
+    }
+  ],
+  "database": {
+    "provider": "Neon PostgreSQL",
+    "connection_string_env": "DATABASE_URL",
+    "schema": {
+      "table": "ahli",
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "constraints": "PRIMARY KEY",
+          "description": "UUID v4 generated automatically"
+        },
+        {
+          "name": "nama",
+          "type": "TEXT",
+          "constraints": "NOT NULL",
+          "description": "Member's full name"
+        },
+        {
+          "name": "telefon",
+          "type": "TEXT",
+          "constraints": "NULL",
+          "description": "Phone number"
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "constraints": "NULL",
+          "description": "Email address"
+        },
+        {
+          "name": "jawatan",
+          "type": "TEXT",
+          "constraints": "NULL",
+          "description": "Position/role"
+        },
+        {
+          "name": "nombor_ic",
+          "type": "TEXT",
+          "constraints": "NULL",
+          "description": "ID card number"
+        },
+        {
+          "name": "no_keahlian",
+          "type": "TEXT",
+          "constraints": "NULL",
+          "description": "Membership number"
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "constraints": "DEFAULT CURRENT_TIMESTAMP",
+          "description": "Record creation timestamp"
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "constraints": "DEFAULT CURRENT_TIMESTAMP",
+          "description": "Last update timestamp"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_ahli_created_at",
+          "columns": ["created_at DESC"],
+          "purpose": "Faster date-based queries"
+        },
+        {
+          "name": "idx_ahli_no_keahlian",
+          "columns": ["no_keahlian"],
+          "purpose": "Faster membership number lookups"
+        }
+      ]
+    }
+  },
+  "environment_variables": {
+    "required": [
+      {
+        "name": "DATABASE_URL",
+        "description": "Neon PostgreSQL connection string",
+        "format": "postgresql://username:password@host/database?sslmode=require",
+        "example": "postgresql://neondb_owner:password@host.neon.tech/neondb?sslmode=require",
+        "where_to_set": "Vercel Project Settings → Environment Variables"
+      }
+    ],
+    "optional": []
+  },
+  "setup_instructions": {
+    "local_development": [
+      {
+        "step": 1,
+        "action": "Install dependencies",
+        "command": "npm install"
+      },
+      {
+        "step": 2,
+        "action": "Create .env file",
+        "details": "Add DATABASE_URL with your Neon PostgreSQL connection string"
+      },
+      {
+        "step": 3,
+        "action": "Initialize database",
+        "details": "Run SQL from setup-database.sql in Neon's SQL Editor"
+      },
+      {
+        "step": 4,
+        "action": "Run locally",
+        "command": "vercel dev"
+      }
+    ],
+    "production_deployment": [
+      {
+        "step": 1,
+        "action": "Create Neon PostgreSQL database",
+        "url": "https://console.neon.tech/"
+      },
+      {
+        "step": 2,
+        "action": "Initialize database schema",
+        "details": "Run setup-database.sql in Neon SQL Editor"
+      },
+      {
+        "step": 3,
+        "action": "Add DATABASE_URL to Vercel",
+        "details": "Go to Project Settings → Environment Variables, add DATABASE_URL for all environments"
+      },
+      {
+        "step": 4,
+        "action": "Deploy to Vercel",
+        "command": "npx vercel --prod"
+      }
+    ]
+  },
+  "features": {
+    "authentication": {
+      "type": "Query parameter based",
+      "endpoints": ["/api/ahli/:id (PUT)"],
+      "credentials": {
+        "username": "admin",
+        "password": "admin123",
+        "customizable": true
+      }
+    },
+    "cors": {
+      "enabled": true,
+      "config": "Access-Control-Allow-Origin: *"
+    },
+    "data_validation": {
+      "enabled": true,
+      "implementation": "JSON body parsing with error handling"
+    },
+    "uuid_generation": {
+      "library": "uuid v4",
+      "usage": "Automatic ID generation for new members"
+    }
+  },
+  "static_files": {
+    "landing_page": {
+      "path": "/",
+      "file": "public/index.html",
+      "description": "API documentation landing page with styled interface"
+    },
+    "postman_collection": {
+      "path": "/postman-collection.json",
+      "file": "public/postman-collection.json",
+      "description": "Importable Postman collection with all API endpoints pre-configured"
+    }
+  },
+  "testing": {
+    "postman_collection": {
+      "file": "public/postman-collection.json",
+      "base_url_variable": "https://training-backend-sigma.vercel.app",
+      "includes_examples": [
+        "Authentication (success and failed)",
+        "Get all members",
+        "Add new member (2 examples)",
+        "Update member (authorized and unauthorized)",
+        "View HTML page"
+      ]
+    },
+    "curl_examples": {
+      "auth": "curl -X POST https://training-backend-sigma.vercel.app/api/auth -H 'Content-Type: application/json' -d '{\"username\":\"admin\",\"password\":\"admin123\"}'",
+      "get_all": "curl https://training-backend-sigma.vercel.app/api/ahli",
+      "add_member": "curl -X POST https://training-backend-sigma.vercel.app/api/ahli -H 'Content-Type: application/json' -d '{\"nama\":\"Ahmad\",\"telefon\":\"0123456789\",\"email\":\"ahmad@example.com\",\"jawatan\":\"Ahli Biasa\",\"nombor_ic\":\"901234567890\",\"no_keahlian\":\"M001\"}'"
+    }
+  },
+  "security_considerations": {
+    "recommendations": [
+      "Change default admin credentials before production use",
+      "Consider implementing JWT or OAuth for authentication",
+      "Add rate limiting for API endpoints",
+      "Implement input validation and sanitization",
+      "Use environment-specific credentials",
+      "Enable HTTPS only (Vercel provides this by default)"
+    ],
+    "current_implementation": {
+      "auth_method": "Simple query parameter authentication",
+      "password_storage": "Hardcoded in code (not recommended for production)",
+      "cors": "Wide open (*) - restrict for production if needed"
+    }
+  },
+  "troubleshooting": {
+    "common_issues": [
+      {
+        "issue": "500 INTERNAL_SERVER_ERROR",
+        "cause": "DATABASE_URL environment variable not set in Vercel",
+        "solution": "Add DATABASE_URL to Vercel Environment Variables and redeploy"
+      },
+      {
+        "issue": "404 NOT_FOUND on API endpoints",
+        "cause": "Incorrect Vercel routing configuration",
+        "solution": "Ensure vercel.json uses modern rewrites syntax, not deprecated builds"
+      },
+      {
+        "issue": "Database connection errors",
+        "cause": "Invalid connection string or database not accessible",
+        "solution": "Verify DATABASE_URL format includes ?sslmode=require and database is active"
+      },
+      {
+        "issue": "CORS errors",
+        "cause": "Browser blocking cross-origin requests",
+        "solution": "Headers are set to * by default, check browser console for specific errors"
+      }
+    ]
+  },
+  "file_structure": {
+    "api/": {
+      "auth.js": "POST /api/auth - Authentication endpoint",
+      "ahli.js": "GET/POST /api/ahli - Get all members or add new member",
+      "ahli-html.js": "GET /api/ahli-html - HTML table view of members",
+      "ahli/[id].js": "PUT /api/ahli/:id - Update member by ID (requires auth)"
+    },
+    "public/": {
+      "index.html": "Landing page with API documentation",
+      "postman-collection.json": "Postman collection for API testing"
+    },
+    "root_files": {
+      "vercel.json": "Vercel deployment configuration",
+      "package.json": "Node.js dependencies and project metadata",
+      "setup-database.sql": "PostgreSQL schema initialization script",
+      ".env": "Local environment variables (not deployed)",
+      "README.md": "Project overview and quick start guide",
+      "VERCEL_DEPLOYMENT.md": "Detailed deployment instructions"
+    }
+  },
+  "notes": {
+    "general_purpose": "This is a generic member management backend that can be adapted for any organization or use case",
+    "scalability": "Serverless architecture allows automatic scaling based on demand",
+    "customization": "Template can be easily modified for specific organizational needs"
+  }
+}
