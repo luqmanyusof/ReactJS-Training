@@ -1,4 +1,4 @@
-// Topic 24: localStorage Basics
+// Topic 26: localStorage Basics
 // Learn how to save data in the browser
 
 import { useState } from 'react'
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 24: localStorage Basics</h1>
+      <h1>Topic 26: localStorage Basics</h1>
 
       <h2>Save Your Name</h2>
       <input 

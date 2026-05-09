@@ -1,4 +1,4 @@
-# Topic 14: Input Handling
+# Topic 15: Input Handling
 
 ## What is Controlled Input?
 An input whose value is controlled by React state, not by the DOM.

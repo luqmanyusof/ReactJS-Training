@@ -1,4 +1,4 @@
-// Topic 21: Fetch API
+// Topic 23: Fetch API
 // Learn how to fetch data from an API
 
 import { useState, useEffect } from 'react'
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 21: Fetch API</h1>
+      <h1>Topic 23: Fetch API</h1>
 
       {loading && <p>Loading...</p>}
 

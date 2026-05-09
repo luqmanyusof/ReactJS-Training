@@ -1,4 +1,4 @@
-// Topic 12: Event Handling
+// Topic 13: Event Handling
 // Learn how to handle clicks and other events
 
 import { useState } from 'react'
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 12: Event Handling</h1>
+      <h1>Topic 13: Event Handling</h1>
 
       <h2>1. Basic Click</h2>
       <button onClick={handleClick}>Click Me</button>

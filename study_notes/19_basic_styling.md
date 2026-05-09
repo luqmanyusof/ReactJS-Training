@@ -1,4 +1,4 @@
-# Topic 17: Basic Styling
+# Topic 19: Basic Styling
 
 ## What is it?
 Different methods to style React components: external CSS, inline styles, and CSS classes.

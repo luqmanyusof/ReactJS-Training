@@ -1,4 +1,4 @@
-# Topic 15: Multiple Inputs
+# Topic 17: Multiple Inputs
 
 ## What is it?
 Managing multiple form inputs efficiently using object state and a single handler function.

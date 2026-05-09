@@ -1,4 +1,4 @@
-// Topic 13: Form Submit
+// Topic 18: Form Submit
 // Learn how to handle form submission and use object state
 
 import { useState } from 'react'
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 16: Form Submit</h1>
+      <h1>Topic 18: Form Submit</h1>
 
       <form onSubmit={handleSubmit}>
         <input 

@@ -1,4 +1,4 @@
-# Topic 24: localStorage
+# Topic 26: localStorage
 
 ## What is it?
 Browser storage that persists data even after closing the browser. Data saved in localStorage stays until explicitly deleted.

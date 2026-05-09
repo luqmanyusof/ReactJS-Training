@@ -1,4 +1,4 @@
-# Topic 23: Lifting State Up
+# Topic 25: Lifting State Up
 
 ## What is it?
 Moving state from child components to a common parent component so that multiple components can share and synchronize the same data.

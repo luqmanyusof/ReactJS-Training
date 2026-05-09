@@ -1,4 +1,4 @@
-// Topic 22: Loading and Error States
+// Topic 24: Loading and Error States
 // Learn how to handle loading, error, and success states
 
 import { useState, useEffect } from 'react'
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 22: Loading and Error States</h1>
+      <h1>Topic 24: Loading and Error States</h1>
 
       {/* Loading */}
       {loading && <p>Loading...</p>}

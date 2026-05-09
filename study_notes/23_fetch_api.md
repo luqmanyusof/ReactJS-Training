@@ -1,4 +1,4 @@
-# Topic 21: Fetch API
+# Topic 23: Fetch API
 
 ## What is it?
 Using JavaScript's `fetch()` function with useEffect to get data from APIs.

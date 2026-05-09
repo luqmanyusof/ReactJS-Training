@@ -1,4 +1,4 @@
-// Topic 19: useRef Hook
+// Topic 21: useRef Hook
 // Learn how to access DOM elements and store values without re-rendering
 
 import { useRef, useState } from 'react'
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 19: useRef Hook</h1>
+      <h1>Topic 21: useRef Hook</h1>
 
       <h2>Example 1: Focus Input</h2>
       <input ref={inputRef} type="text" placeholder="Type something..." />

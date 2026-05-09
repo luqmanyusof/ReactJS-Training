@@ -1,4 +1,4 @@
-// Topic 23: Lifting State Up
+// Topic 25: Lifting State Up
 // Learn how to share state between components
 
 import { useState } from 'react'
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 23: Lifting State Up</h1>
+      <h1>Topic 25: Lifting State Up</h1>
 
       <TemperatureInput 
         temp={celsius} 

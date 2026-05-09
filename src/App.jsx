@@ -10,25 +10,27 @@ import Topic08 from './topics/08_default_props.jsx'
 import Topic09 from './topics/09_list_rendering.jsx'
 import Topic10 from './topics/10_key_in_list.jsx'
 import Topic11 from './topics/11_conditional_rendering.jsx'
-import Topic12 from './topics/12_event_handling.jsx'
-import Topic13 from './topics/13_usestate_basics.jsx'
-import Topic14 from './topics/14_input_handling.jsx'
-import Topic15 from './topics/15_multiple_inputs.jsx'
-import Topic16 from './topics/16_form_submit.jsx'
-import Topic17 from './topics/17_basic_styling.jsx'
-import Topic18 from './topics/18_css_modules.jsx'
-import Topic19 from './topics/19_useref_hook.jsx'
-import Topic20 from './topics/20_useeffect_basics.jsx'
-import Topic21 from './topics/21_fetch_api.jsx'
-import Topic22 from './topics/22_loading_error_states.jsx'
-import Topic23 from './topics/23_lifting_state_up.jsx'
-import Topic24 from './topics/24_localStorage.jsx'
-import Topic25 from './topics/25_custom_hooks.jsx'
-import Topic26 from './topics/26_context_api.jsx'
-import Topic27 from './topics/27_error_boundaries.jsx'
-import Topic28 from './topics/28_react_router_setup.jsx'
-import Topic29 from './topics/29_environment_variables.jsx'
-import Topic30 from './topics/30_deployment.jsx'
+import Topic12 from './topics/12_usestate_basics.jsx'
+import Topic13 from './topics/13_event_handling.jsx'
+import Topic14 from './topics/14_simple_form.jsx'
+import Topic15 from './topics/15_input_handling.jsx'
+import Topic16 from './topics/16_form_elements.jsx'
+import Topic17 from './topics/17_multiple_inputs.jsx'
+import Topic18 from './topics/18_form_submit.jsx'
+import Topic19 from './topics/19_basic_styling.jsx'
+import Topic20 from './topics/20_css_modules.jsx'
+import Topic21 from './topics/21_useref_hook.jsx'
+import Topic22 from './topics/22_useeffect_basics.jsx'
+import Topic23 from './topics/23_fetch_api.jsx'
+import Topic24 from './topics/24_loading_error_states.jsx'
+import Topic25 from './topics/25_lifting_state_up.jsx'
+import Topic26 from './topics/26_localStorage.jsx'
+import Topic27 from './topics/27_custom_hooks.jsx'
+import Topic28 from './topics/28_context_api.jsx'
+import Topic29 from './topics/29_error_boundaries.jsx'
+import Topic30 from './topics/30_react_router_setup.jsx'
+import Topic31 from './topics/31_environment_variables.jsx'
+import Topic32 from './topics/32_deployment.jsx'
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
       <div id="topic28"><Topic28 /></div>
       <div id="topic29"><Topic29 /></div>
       <div id="topic30"><Topic30 /></div>
+      <div id="topic31"><Topic31 /></div>
+      <div id="topic32"><Topic32 /></div>
     </div>
   )
 }

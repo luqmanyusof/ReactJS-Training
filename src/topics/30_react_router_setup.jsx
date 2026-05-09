@@ -1,4 +1,4 @@
-// Topic 28: React Router Setup
+// Topic 30: React Router Setup
 // Learn how routing works (simulated without library)
 
 import { useState } from 'react'
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 28: React Router Setup</h1>
+      <h1>Topic 30: React Router Setup</h1>
 
       <h2>Navigation</h2>
       <button onClick={() => setPage('home')}>Home</button>

@@ -1,4 +1,4 @@
-// Topic 15: Multiple Inputs
+// Topic 17: Multiple Inputs
 // Learn how to handle multiple form inputs
 
 import { useState } from 'react'
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 15: Multiple Inputs</h1>
+      <h1>Topic 17: Multiple Inputs</h1>
 
       <h2>Form</h2>
       <input 

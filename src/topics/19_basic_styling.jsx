@@ -1,12 +1,12 @@
-// Topic 17: Basic Styling
+// Topic 19: Basic Styling
 // Learn different ways to style React components
 
-import './17_basic_styling.css'
+import './19_basic_styling.css'
 
 function App() {
   return (
     <div>
-      <h1>Topic 17: Basic Styling</h1>
+      <h1>Topic 19: Basic Styling</h1>
 
       <h2>1. External CSS (Recommended)</h2>
       <p>Create a .css file and import it.</p>

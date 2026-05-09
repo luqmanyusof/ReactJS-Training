@@ -1,4 +1,4 @@
-# Topic 20: useEffect Basics
+# Topic 22: useEffect Basics
 
 ## What is useEffect?
 A React Hook for performing side effects in functional components - code that runs after render.

@@ -1,4 +1,4 @@
-# Topic 22: Loading and Error States
+# Topic 24: Loading and Error States
 
 ## What is it?
 Managing three states in async operations: loading, error, and success.

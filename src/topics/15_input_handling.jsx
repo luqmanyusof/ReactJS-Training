@@ -1,4 +1,4 @@
-// Topic 14: Input Handling
+// Topic 15: Input Handling
 // Learn how to handle form inputs with state
 
 import { useState } from 'react'
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 14: Input Handling</h1>
+      <h1>Topic 15: Input Handling</h1>
 
       <h2>Text Input</h2>
       <input

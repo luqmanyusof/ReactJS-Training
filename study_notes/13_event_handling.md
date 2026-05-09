@@ -1,4 +1,4 @@
-# Topic 12: Event Handling
+# Topic 13: Event Handling
 
 ## What is Event Handling?
 Responding to user interactions like clicks, typing, hovering, and form submissions.

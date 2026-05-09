@@ -1,4 +1,4 @@
-# Topic 13: useState Basics
+# Topic 12: useState Basics
 
 ## What is useState?
 A React Hook that lets you add state (changeable data) to functional components.

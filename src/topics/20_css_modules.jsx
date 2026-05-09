@@ -1,7 +1,7 @@
-// Topic 18: CSS Modules
+// Topic 20: CSS Modules
 // Learn how to scope CSS to specific components
 
-import styles from './18_css_modules.module.css'
+import styles from './20_css_modules.module.css'
 
 // Component 1: Card
 function Card() {
@@ -39,7 +39,7 @@ function UserProfile() {
 function App() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.mainTitle}>Topic 18: CSS Modules</h1>
+      <h1 className={styles.mainTitle}>Topic 20: CSS Modules</h1>
 
       <section className={styles.section}>
         <h2>Example Components</h2>

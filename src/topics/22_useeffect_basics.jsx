@@ -1,4 +1,4 @@
-// Topic 20: useEffect Basics
+// Topic 22: useEffect Basics
 // Learn how to run code after render (side effects)
 
 import { useState, useEffect } from 'react'
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 20: useEffect Basics</h1>
+      <h1>Topic 22: useEffect Basics</h1>
 
       <h2>Counter: {count}</h2>
       <button onClick={() => setCount(count + 1)}>Add</button>

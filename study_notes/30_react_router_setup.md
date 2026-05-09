@@ -1,4 +1,4 @@
-# Topic 28: React Router Setup
+# Topic 30: React Router Setup
 
 ## What is React Router?
 A library for handling navigation between different pages/views in a React application.

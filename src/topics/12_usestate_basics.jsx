@@ -1,4 +1,4 @@
-// Topic 13: useState Basics
+// Topic 12: useState Basics
 // Learn how to manage state (data that changes)
 
 import { useState } from 'react'
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <h1>Topic 13: useState Basics</h1>
+      <h1>Topic 12: useState Basics</h1>
 
       <h2>Counter Example</h2>
       <p>Count: {count}</p>

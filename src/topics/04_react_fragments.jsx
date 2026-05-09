@@ -1,6 +1,8 @@
 // Topic 4: React Fragments
 // Learn how to group elements without adding extra DOM nodes
 
+import { Fragment } from 'react'
+
 // Component with extra div (not ideal)
 function CardWithDiv() {
   return (
@@ -39,12 +41,12 @@ function ListItems() {
       </thead>
       <tbody>
         {items.map(item => (
-          <React.Fragment key={item.id}>
+          <Fragment key={item.id}>
             <tr>
               <td>{item.name}</td>
               <td>${item.price}</td>
             </tr>
-          </React.Fragment>
+          </Fragment>
         ))}
       </tbody>
     </table>
@@ -80,10 +82,12 @@ function App() {
 </>`}</pre>
 
       <h3>2. Full Syntax (When you need key prop)</h3>
-      <pre>{`<React.Fragment key={id}>
+      <pre>{`import { Fragment } from 'react'
+
+<Fragment key={id}>
   <h1>Title</h1>
   <p>Content</p>
-</React.Fragment>`}</pre>
+</Fragment>`}</pre>
 
       <hr />
 
