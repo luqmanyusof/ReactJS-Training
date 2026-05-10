@@ -1,65 +1,131 @@
-# React Course - Unified Project
+# React Course - Complete Training (32 Topics)
+
+Learn React from absolute basics to production deployment with hands-on examples.
 
 ## Quick Start
 
 ```bash
-cd course-unified
 npm install
 npm run dev
 ```
 
-## How to Switch Topics
+Open [http://localhost:5173](http://localhost:5173) - All 32 topics display on one scrollable page.
 
-Open `src/App.jsx` and change line 7:
+## Course Topics (32 Total)
 
-```jsx
-const CURRENT_TOPIC = 1  // Change to any number 1-30
-```
+### Foundation (1-8): Core React Concepts
+1. **Project Setup** - Vite, React basics, JSX introduction
+2. **JSX and Variables** - Embedding JavaScript in JSX
+3. **First Component** - Creating functional components
+4. **React Fragments** - Grouping elements without extra DOM nodes
+5. **Component Composition** - Nesting components, children prop
+6. **Props Basics** - Passing data to components
+7. **Multiple Props** - Using multiple props with different types
+8. **Default Props** - Setting default values for optional props
 
-Save the file and the browser will auto-refresh to show that topic.
+### Lists & Logic (9-11): Data Display
+9. **List Rendering** - Using map() to display arrays
+10. **Key in List** - Understanding keys in React lists
+11. **Conditional Rendering** - Show/hide content with logic
+
+### Interaction (12-18): User Input & State
+12. **useState Basics** - Managing state in functional components
+13. **Event Handling** - Responding to user interactions
+14. **Simple Form** - Basic form submission with preventDefault
+15. **Input Handling** - Controlled text inputs
+16. **Form Elements** - Dropdown, radio, checkbox, number, range
+17. **Multiple Inputs** - Handling multiple form fields
+18. **Form Submit** - Complete forms with object state
+
+### Styling (19-20): Appearance
+19. **Basic Styling** - External CSS, inline styles
+20. **CSS Modules** - Scoped CSS for components
+
+### Hooks (21-24): Advanced React Features
+21. **useRef Hook** - DOM access and persistent values
+22. **useEffect Basics** - Side effects and lifecycle
+23. **Fetch API** - Getting data from APIs
+24. **Loading/Error States** - Handling async states properly
+
+### Advanced Patterns (25-28): Professional Techniques
+25. **Lifting State Up** - Sharing state between components
+26. **localStorage** - Browser storage for persistence
+27. **Custom Hooks** - Reusable stateful logic
+28. **Context API** - Global state management
+
+### Production (29-32): Deployment Ready
+29. **Error Boundaries** - Catching component errors
+30. **React Router** - Navigation simulation
+31. **Environment Variables** - Vite env configuration
+32. **Deployment** - Netlify, Vercel, GitHub Pages
 
 ## Project Structure
 
 ```
-course-unified/
+ReactJS Training/
 ├── package.json
 ├── vite.config.js
 ├── index.html
-└── src/
-    ├── main.jsx
-    ├── App.jsx              # Topic selector
-    └── topics/
-        ├── 01_project_setup.jsx
-        ├── 02_jsx_and_variables.jsx
-        ├── 03_first_component.jsx
-        ├── 04_props_basics.jsx
-        ├── 05_multiple_props.jsx
-        ├── 06_list_rendering.jsx
-        ├── 07_key_in_list.jsx
-        ├── 08_event_handling.jsx
-        ├── 09_usestate_basics.jsx
-        ├── 10_input_handling.jsx
-        ├── 11_multiple_inputs.jsx
-        ├── 12_conditional_rendering.jsx
-        ├── 13_form_submit.jsx
-        ├── 14_component_composition.jsx
-        ├── 15_basic_styling.jsx
-        ├── 16_useeffect_basics.jsx
-        ├── 17_fetch_api.jsx
-        ├── 18_loading_error_states.jsx
-        ├── 19_react_router_setup.jsx
-        ├── 20_navigation.jsx
-        ├── 21_login_ui.jsx
-        ├── 22_login_logic.jsx
-        ├── 23_protected_route.jsx
-        ├── 24_crud_list.jsx
-        ├── 25_crud_create.jsx
-        ├── 26_crud_update.jsx
-        ├── 27_crud_delete.jsx
-        ├── 28_refactor_structure.jsx
-        ├── 29_api_layer.jsx
-        └── 30_final_integration.jsx
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx                    # Renders all 32 topics
+│   └── topics/
+│       ├── 01_project_setup.jsx
+│       ├── 02_jsx_and_variables.jsx
+│       ├── 03_first_component.jsx
+│       ├── 04_react_fragments.jsx
+│       ├── 05_component_composition.jsx
+│       ├── 06_props_basics.jsx
+│       ├── 07_multiple_props.jsx
+│       ├── 08_default_props.jsx
+│       ├── 09_list_rendering.jsx
+│       ├── 10_key_in_list.jsx
+│       ├── 11_conditional_rendering.jsx
+│       ├── 12_usestate_basics.jsx
+│       ├── 13_event_handling.jsx
+│       ├── 14_simple_form.jsx
+│       ├── 15_input_handling.jsx
+│       ├── 16_form_elements.jsx
+│       ├── 17_multiple_inputs.jsx
+│       ├── 18_form_submit.jsx
+│       ├── 19_basic_styling.jsx
+│       ├── 20_css_modules.jsx
+│       ├── 21_useref_hook.jsx
+│       ├── 22_useeffect_basics.jsx
+│       ├── 23_fetch_api.jsx
+│       ├── 24_loading_error_states.jsx
+│       ├── 25_lifting_state_up.jsx
+│       ├── 26_localStorage.jsx
+│       ├── 27_custom_hooks.jsx
+│       ├── 28_context_api.jsx
+│       ├── 29_error_boundaries.jsx
+│       ├── 30_react_router_setup.jsx
+│       ├── 31_environment_variables.jsx
+│       └── 32_deployment.jsx
+└── study_notes/
+    ├── 01_project_setup.md
+    ├── 02_jsx_and_variables.md
+    └── ... (32 markdown files with detailed notes)
 ```
+
+## Learning Path
+
+**Recommended order:** Follow topics 1-32 sequentially. Each topic builds on previous concepts.
+
+**Key prerequisites:**
+- Topic 12 (useState) must come before topics that use state
+- Topics 14-18 (Forms) build progressively in complexity
+- Topic 22 (useEffect) required before Topic 23 (Fetch API)
+- Topics 25-28 (Advanced) require solid understanding of hooks
+
+## Study Notes
+
+Each topic has a detailed markdown file in `study_notes/` covering:
+- What the concept is
+- Why it's important
+- Code examples with explanations
+- Common patterns and best practices
+- Mistakes to avoid
 
 ## Debugging Tips
 
