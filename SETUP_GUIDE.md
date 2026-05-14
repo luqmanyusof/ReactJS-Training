@@ -6,12 +6,12 @@
 ## Step 1: Create Vite + React Project
 ```bash
 npm create vite@latest my-material-app -- --template react
+ctrl + c to exit
 cd my-material-app
 ```
 
 ## Step 2: Install Dependencies
 ```bash
-npm install
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm install react-router-dom
